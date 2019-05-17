@@ -43,9 +43,13 @@ public class MainController {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		if(rstudent == null) {
+			mav.addObject("message","The student id you are searching for doesn't exist");
+		}else {
 		mav.addObject("rstudent",rstudent);
+		}
 		mav.setViewName("searchresult");
-		//mav.addObject("message","Hi");
+
 		return mav;
 	}
 	
